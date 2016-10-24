@@ -7,6 +7,7 @@ var pike = {
   randomNumCustomer: function (){
     Math.floor(Math.random() * maxHourlyCustomers) + minHourlyCustomers;
   },
+  cookiesPurchased: randomNumCustomer() * averageCookies,
   results:[],
 
 };
@@ -18,6 +19,7 @@ var airport = {
   randomNumCustomer: function (){
     Math.floor(Math.random() * maxHourlyCustomers) + minHourlyCustomers;
   },
+  cookiesPurchased: randomNumCustomer() * averageCookies,
   results:[],
 };
 
@@ -28,6 +30,7 @@ var center = {
   randomNumCustomer: function (){
     Math.floor(Math.random() * maxHourlyCustomers) + minHourlyCustomers;
   },
+  cookiesPurchased:randomNumCustomer() * averageCookies,
   results:[],
 };
 
@@ -38,6 +41,7 @@ var hill = {
   randomNumCustomer: function (){
     Math.floor(Math.random() * maxHourlyCustomers) + minHourlyCustomers;
   },
+  cookiesPurchased:randomNumCustomer() * averageCookies,
   results:[],
 };
 
@@ -48,5 +52,6 @@ var alki = {
   randomNumCustomer: function (){
     Math.floor(Math.random() * maxHourlyCustomers) + minHourlyCustomers;
   },
+  cookiesPurchased:randomNumCustomer() * averageCookies,
   results:[],
 };
