@@ -1,0 +1,21 @@
+body {
+  background-color:#E87FA9;
+}
+h1{
+  font-family: 'Open Sans', sans-serif;
+  float:right;
+}
+.top {
+  display:block;
+  margin:0 auto 300px;
+  border:none;
+}
+.middle {
+  display:inline-block;
+  padding-top: 70px;
+}
+
+img {
+  width:30%;
+  height:30%;
+}
