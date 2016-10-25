@@ -82,3 +82,24 @@ var hill = new Store('Capitol Hill', 20,38,2.3);
 hill.renderSales();
 var alki = new Store('Alki', 2, 16, 4.6);
 alki.renderSales();
+
+//create table
+var main = document.getElementsByTagName('main')[0];
+var table = document.createElement('table');
+table.className = 'store-data';
+main.appendChild(table);
+
+//create table head
+var tHead = document.createElement('thead');
+tHead.innerText = 'Cookies Needed By Location Each Hour';
+table.appendChild(tHead);
+
+//create table th
+var th = document.createElement('th');
+for (var i = 0; i < hours.length; i++) {
+  th.innerText = hours[i];
+}
+table.appendChild(th);
+
+//create table tr
+var tr = document.createElement('tr');
