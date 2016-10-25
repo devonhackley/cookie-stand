@@ -64,10 +64,10 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
 
   //function that creates a row of data for each store
   this.createTableRow = function () {
+    console.log('createTableRow', this.name);
     var table = document.getElementById('store-data');
     var tr = document.createElement('tr');
-    var tBody = document.getElementsByTagName('tbody')[0];
-    table.appendChild(tBody);
+    var tBody = document.getElementById('store-body');
     tBody.appendChild(tr);
     //create table th
     var th = document.createElement('th');
@@ -111,6 +111,7 @@ var createStoreTable = function () {
   table.appendChild(tHead);
 
   var tBody = document.createElement('tbody');
+  tBody.id = 'store-body';
   table.appendChild(tBody);
 
   //create table tr

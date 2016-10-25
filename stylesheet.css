@@ -1,5 +1,6 @@
 body {
   background-color:#FFECE3;
+  font-family: Georgia;
 }
 h1{
   font-family: 'Open Sans', sans-serif;
@@ -16,9 +17,7 @@ h2 {
   text-align: center;
   color:#4F68FF;
 }
-p {
-  font-family: Georgia;
-}
+
 .top {
   margin:0 auto 0 auto;
   padding-left: 20%;
@@ -47,6 +46,17 @@ img {
   margin-top: 30%;
 
 }
-.store-data {
-  border: thin solid black;
+#store-data {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  float:right;
+  margin-right:22%;
+  border: thick dashed red;
+  width:50%;
+  height:50%;
+  font-family: verdana;
+
+}
+tr:nth-child(even) {
+  background-color: #E89499;
 }
