@@ -55,16 +55,15 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
     var ul = document.createElement('ul');
     var totalSales = 0;
     for (var i = 0; i < this.dailySales.length; i++) {
-      totalSales += this.dailySales[i];
+      this.totalSales += this.dailySales[i];
     }
     var li = document.createElement('li');
-    li.innerText = 'Total Sales: ' + totalSales + ' cookies';
+    li.innerText = 'Total Sales: ' + this.totalSales + ' cookies';
     ul.appendChild(li);
   };
 
   //function that creates a row of data for each store
   this.createTableRow = function () {
-    console.log('createTableRow', this.name);
     var table = document.getElementById('store-data');
     var tr = document.createElement('tr');
     var tBody = document.getElementById('store-body');
@@ -80,16 +79,27 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
     }
   };
 
+  this.totalCookies = function () {
+    var tr = document.createElement('tr');
+    var tBody = document.getElementById('store-body');
+    tBody.appendChild(tr);
+    var totalSales = 0;
+    for (var i = 0; i < this.dailySales.length; i++) {
+      this.totalSales += this.dailySales[i];
+      var td = document.createElement('td');
+      td.innerText = this.totalSales;
+      tr.appendChild(td);
+    }
+  };
+
   this.renderSales = function() {
     //calculate cookies
     this.calcCookiesSales();
 
     // //attaching store name
     // this.attachStoreName();
-
     //attaching li to list
     // this.createStoreInfo();
-    //
     // //attaching total sales to daily sales
     // this.attachStoreSales();
 
@@ -130,6 +140,7 @@ var createStoreTable = function () {
   tHead.appendChild(tr);
 };
 
+
 // create table
 createStoreTable();
 
@@ -144,3 +155,30 @@ var hill = new Store('Capitol Hill', 20,38,2.3);
 hill.renderSales();
 var alki = new Store('Alki', 2, 16, 4.6);
 alki.renderSales();
+
+//array of locations
+var locationArray = [pike, airport, center,hill,alki];
+
+//function that creates the total cookie row
+var createTotalRow = function () {
+  var table = document.getElementById('store-data');
+  var tr = document.createElement('tr');
+  var tBody = document.getElementById('store-body');
+  tBody.appendChild(tr);
+  var th = document.createElement('th');
+  th.innerText = 'Total: ';
+  tr.appendChild(th);
+  for (var i = 0; i < hours.length; i++) {
+    var hourlySales = 0;
+    for (var j = 0; j < locationArray.length;  j++) {
+      hourlySales += locationArray[j].dailySales[i];
+    }
+    var td = document.createElement('td');
+    td.innerText = hourlySales;
+    tr.appendChild(td);
+  }
+
+};
+
+//creates the total row
+createTotalRow();
