@@ -12,7 +12,8 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
   this.maxHourlyCustomers = maxHourlyCustomers;
   this.averageCookies = averageCookies;
   this.dailySales = [];
-
+  this.locationTotals = 0;
+  this.locationLog = [];
   //function that returns a random customer amount
   this.randomNumCustomer = function () {
     return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
@@ -22,6 +23,7 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
   this.calcCookiesSales = function () {
     for (var i = 0 ; i < hours.length;i++) {
       this.dailySales[i] = Math.floor(this.randomNumCustomer() * this.averageCookies);
+      this.locationTotals += this.dailySales[i];
     }
   };
 
@@ -51,22 +53,23 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
   };
 
   //function that attaches the total sales to the daily sales
-  this.attachStoreSales = function () {
-    var ul = document.createElement('ul');
-    var totalSales = 0;
-    for (var i = 0; i < this.dailySales.length; i++) {
-      this.totalSales += this.dailySales[i];
-    }
-    var li = document.createElement('li');
-    li.innerText = 'Total Sales: ' + this.totalSales + ' cookies';
-    ul.appendChild(li);
-  };
+  // this.attachStoreSales = function () {
+  //   var ul = document.createElement('ul');
+  //   var totalSales = 0;
+  //   for (var i = 0; i < this.dailySales.length; i++) {
+  //     this.totalSales += this.dailySales[i];
+  //   }
+  //   var li = document.createElement('li');
+  //   li.innerText = 'Total Sales: ' + this.totalSales + ' cookies';
+  //   ul.appendChild(li);
+  // };
 
   //function that creates a row of data for each store
   this.createTableRow = function () {
     var table = document.getElementById('store-data');
     var tr = document.createElement('tr');
     var tBody = document.getElementById('store-body');
+    var locationCell = document.createElement('td');
     tBody.appendChild(tr);
     //create table th
     var th = document.createElement('th');
@@ -77,8 +80,12 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
       td.innerText = this.dailySales[i];
       tr.appendChild(td);
     }
+    // this.totalSalesPerLocation();
+    locationCell.innerText = this.locationTotals;
+    tr.appendChild(locationCell);
   };
 
+   //function that calculates the total cookies for a given day
   this.totalCookies = function () {
     var tr = document.createElement('tr');
     var tBody = document.getElementById('store-body');
@@ -92,20 +99,12 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
     }
   };
 
+  //this function renders that data to the page
   this.renderSales = function() {
     //calculate cookies
     this.calcCookiesSales();
-
-    // //attaching store name
-    // this.attachStoreName();
-    //attaching li to list
-    // this.createStoreInfo();
-    // //attaching total sales to daily sales
-    // this.attachStoreSales();
-
     // creates the table
     this.createTableRow();
-
   };
 };
 
@@ -137,9 +136,10 @@ var createStoreTable = function () {
     th.innerText = hours[i];
     tr.appendChild(th);
   }
-  tHead.appendChild(tr);
+  var th2 = document.createElement('th');
+  th2.innerText = 'Location Totals: ';
+  tr.appendChild(th2);
 };
-
 
 // create table
 createStoreTable();
@@ -170,12 +170,18 @@ var createTotalRow = function () {
   tr.appendChild(th);
   for (var i = 0; i < hours.length; i++) {
     var hourlySales = 0;
-    for (var j = 0; j < locationArray.length;  j++) {
+    var hourlyLocationTotal = 0;
+    for (var j = 0; j < locationArray.length; j++) {
       hourlySales += locationArray[j].dailySales[i];
+      // hourlyLocationTotal += locationArray[j].locationTotals;
     }
     var td = document.createElement('td');
     td.innerText = hourlySales;
     tr.appendChild(td);
+
+    // var td2 = document.createElement('td');
+    // td2.innerText = hourlyLocationTotal;
+    // tr.appendChild(td2);
   }
 
 };
