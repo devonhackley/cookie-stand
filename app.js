@@ -173,7 +173,7 @@ var createTotalRow = function () {
     var hourlyLocationTotal = 0;
     for (var j = 0; j < locationArray.length; j++) {
       hourlySales += locationArray[j].dailySales[i];
-      // hourlyLocationTotal += locationArray[j].locationTotals;
+      //hourlyLocationTotal += locationTotals;
     }
     var td = document.createElement('td');
     td.innerText = hourlySales;
