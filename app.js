@@ -14,6 +14,7 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
   this.dailySales = [];
   this.locationTotals = 0;
   this.locationLog = [];
+  
   //function that returns a random customer amount
   this.randomNumCustomer = function () {
     return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
@@ -26,43 +27,6 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
       this.locationTotals += this.dailySales[i];
     }
   };
-
-  //attaches the store name to a h2 header
-  this.attachStoreName = function () {
-    var h2 = document.createElement('h2');
-    h2.innerText = (this.name);
-    var main = document.getElementsByTagName('main')[0];
-    main.appendChild(h2);
-  };
-
-  // this.attachStoreList = function () {
-  //   var main = document.getElementsByTagName('main')[0];
-  //   main.appendChild(ul);
-  // };
-
-  //function that generates the amount of cookies needed per hour
-  this.createStoreInfo = function () {
-    var ul = document.createElement('ul');
-    for (var i = 0; i < hours.length; i++) {
-      var li = document.createElement('li');
-      li.innerText = hours[i] + ': ' + this.dailySales[i] + ' cookies';
-      ul.appendChild(li);
-    }
-    var main = document.getElementsByTagName('main')[0];
-    main.appendChild(ul);
-  };
-
-  //function that attaches the total sales to the daily sales
-  // this.attachStoreSales = function () {
-  //   var ul = document.createElement('ul');
-  //   var totalSales = 0;
-  //   for (var i = 0; i < this.dailySales.length; i++) {
-  //     this.totalSales += this.dailySales[i];
-  //   }
-  //   var li = document.createElement('li');
-  //   li.innerText = 'Total Sales: ' + this.totalSales + ' cookies';
-  //   ul.appendChild(li);
-  // };
 
   //function that creates a row of data for each store
   this.createTableRow = function () {
@@ -83,20 +47,6 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
     // this.totalSalesPerLocation();
     locationCell.innerText = this.locationTotals;
     tr.appendChild(locationCell);
-  };
-
-   //function that calculates the total cookies for a given day
-  this.totalCookies = function () {
-    var tr = document.createElement('tr');
-    var tBody = document.getElementById('store-body');
-    tBody.appendChild(tr);
-    var totalSales = 0;
-    for (var i = 0; i < this.dailySales.length; i++) {
-      this.totalSales += this.dailySales[i];
-      var td = document.createElement('td');
-      td.innerText = this.totalSales;
-      tr.appendChild(td);
-    }
   };
 
   //this function renders that data to the page
@@ -177,10 +127,6 @@ var createTotalRow = function () {
     var td = document.createElement('td');
     td.innerText = hourlySales;
     tr.appendChild(td);
-
-    // var td2 = document.createElement('td');
-    // td2.innerText = hourlyLocationTotal;
-    // tr.appendChild(td2);
   }
 
 };
