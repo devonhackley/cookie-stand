@@ -173,17 +173,28 @@ var createTotalRow = function () {
     var hourlyLocationTotal = 0;
     for (var j = 0; j < locationArray.length; j++) {
       hourlySales += locationArray[j].dailySales[i];
-      //hourlyLocationTotal += locationTotals;
+
     }
     var td = document.createElement('td');
     td.innerText = hourlySales;
     tr.appendChild(td);
-
+    // hourlyLocationTotal += locationTotals;
     // var td2 = document.createElement('td');
     // td2.innerText = hourlyLocationTotal;
     // tr.appendChild(td2);
   }
 
+};
+
+var createTotalCookies =  function () {
+  var table = document.getElementById('store-data');
+  var tr = document.createElement('tr');
+  var tBody = document.getElementById('store-body');
+  tBody.appendChild(tr);
+
+  for (var i = 0;i < hours.length; i++) {
+    
+  }
 };
 
 //creates the total row
