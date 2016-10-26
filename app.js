@@ -162,7 +162,7 @@ var locationArray = [pike, airport, center,hill,alki];
 //function that creates the total cookie row
 var createTotalRow = function () {
   var table = document.getElementById('store-data');
-  var tr = document.createElement('tr');
+  var tr = document.createElement('total-row');
   var tBody = document.getElementById('store-body');
   tBody.appendChild(tr);
   var th = document.createElement('th');
@@ -173,7 +173,6 @@ var createTotalRow = function () {
     var hourlyLocationTotal = 0;
     for (var j = 0; j < locationArray.length; j++) {
       hourlySales += locationArray[j].dailySales[i];
-      //hourlyLocationTotal += locationTotals;
     }
     var td = document.createElement('td');
     td.innerText = hourlySales;
@@ -185,6 +184,19 @@ var createTotalRow = function () {
   }
 
 };
+var createCompleteTotal = function () {
+  var totalRow = document.getElementById('total-row');
+  var totalSales = 0;
+  for (var i = 1; i < totalRow.children.length; i++){
+    var td = totalRow.children[i];
+    var number = parseInt(td.innerText);
+    totalSales += number;
+  }
+  var td = document.createElement('td');
+  td.innerText = totalSales;
+  totalRow.appendChild(td);
+};
 
 //creates the total row
+createCompleteTotal();
 createTotalRow();
