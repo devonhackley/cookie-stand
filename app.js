@@ -14,7 +14,7 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
   this.dailySales = [];
   this.locationTotals = 0;
   this.locationLog = [];
-  
+
   //function that returns a random customer amount
   this.randomNumCustomer = function () {
     return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
