@@ -155,6 +155,16 @@ function cookieSalesFormSubmitHandler(event) {
   for (var i = 0; i < locationArray.length; i++){
     locationArray[i].renderSales();
   };
+
+  for (var i = 0; i < fieldset.children.length + 1; i++) {
+    event.target[i].value = '';
+  }
+
+  // event.target[1].value = '';
+  // event.target[2].value = '';
+  // event.target[3].value = '';
+  // event.target[4].value = '';
+
   createTotalRow();
   createCompleteTotal();
 }
