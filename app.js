@@ -41,9 +41,6 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
     makeNewElement('th',this.name,tr);
     for (var i = 0; i < this.dailySales.length; i++) {
       makeNewElement('td',this.dailySales[i],tr);
-      // var td = document.createElement('td');
-      // td.innerText = this.dailySales[i];
-      // tr.appendChild(td);
     }
     // this.totalSalesPerLocation();
     locationCell.innerText = this.locationTotals;
@@ -78,19 +75,10 @@ var createStoreTable = function () {
 
   //create table th
   makeNewElement('th','',tr);
-  // var th = document.createElement('th');
-  // th.innerText = '';
-  // tr.appendChild(th);
   for (var i = 0; i < hours.length; i++) {
-    // makeNewElement('th',hours[i],tr);
-    var th = document.createElement('th');
-    th.innerText = hours[i];
-    tr.appendChild(th);
+    makeNewElement('th',hours[i],tr);
   }
-  // makeNewElement('th','Location Totals: ', tr);
-  var th2 = document.createElement('th');
-  th2.innerText = 'Location Totals: ';
-  tr.appendChild(th2);
+  makeNewElement('th','Location Totals: ', tr);
 };
 
 createStoreTable();
@@ -115,20 +103,14 @@ var createTotalRow = function () {
   tr.id = 'total-row';
   var tBody = document.getElementById('store-body');
   tBody.appendChild(tr);
-  var th = document.createElement('th');
-  th.innerText = 'Total: ';
-  tr.appendChild(th);
+  makeNewElement('th','Total: ', tr);
   for (var i = 0; i < hours.length; i++) {
     var hourlySales = 0;
     var hourlyLocationTotal = 0;
     for (var j = 0; j < locationArray.length; j++) {
       hourlySales += locationArray[j].dailySales[i];
-      //hourlyLocationTotal += locationTotals;
     }
-    var td = document.createElement('td');
-    td.innerText = hourlySales;
-    tr.appendChild(td);
-
+    makeNewElement('td',hourlySales,tr);
   }
 };
 var createCompleteTotal = function () {
@@ -139,11 +121,9 @@ var createCompleteTotal = function () {
     var number = parseInt(td.innerText);
     totalSales += number;
   }
-  var td = document.createElement('td');
-  td.innerText = totalSales;
-  totalRow.appendChild(td);
+  makeNewElement('td',totalSales,totalRow);
 };
-//creates the total row
+
 // Start of Event Code
 var form = document.getElementById('getCookieSalesPerDayForm');
 function cookieSalesFormSubmitHandler(event) {
