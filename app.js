@@ -170,3 +170,5 @@ function cookieSalesFormSubmitHandler(event) {
   createCompleteTotal();
 }
 form.addEventListener('submit', cookieSalesFormSubmitHandler);
+createTotalRow();
+createCompleteTotal();
