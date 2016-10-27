@@ -110,6 +110,7 @@ var createTotalRow = function () {
     for (var j = 0; j < locationArray.length; j++) {
       hourlySales += locationArray[j].dailySales[i];
     }
+
     makeNewElement('td',hourlySales,tr);
   }
 };
@@ -121,11 +122,13 @@ var createCompleteTotal = function () {
     var number = parseInt(td.innerText);
     totalSales += number;
   }
+
   makeNewElement('td',totalSales,totalRow);
 };
 
 // Start of Event Code
 var form = document.getElementById('getCookieSalesPerDayForm');
+
 function cookieSalesFormSubmitHandler(event) {
   event.preventDefault();
   // var name = event.target[name].value;
@@ -153,5 +156,6 @@ function cookieSalesFormSubmitHandler(event) {
   createCompleteTotal();
 }
 form.addEventListener('submit', cookieSalesFormSubmitHandler);
+
 createTotalRow();
 createCompleteTotal();
