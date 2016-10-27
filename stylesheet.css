@@ -60,3 +60,13 @@ img {
 tr:nth-child(even) {
   background-color: #E89499;
 }
+
+#fieldset {
+  padding: 0.5em;
+  text-align: center;
+  border:thin dashed red;
+
+}
+ #submit {
+   margin:auto;
+ }

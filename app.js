@@ -2,6 +2,12 @@
 //array of store hours
 var hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
+var makeNewElement = function(elementTag, elementContent, target){
+  var newEl = document.createElement(elementTag);
+  newEl.innerText = elementContent;
+  target.appendChild(newEl);
+};
+
 //constructor for the store objects
 var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookies) {
 
@@ -32,13 +38,12 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
     var locationCell = document.createElement('td');
     tBody.appendChild(tr);
     //create table th
-    var th = document.createElement('th');
-    th.innerText = this.name;
-    tr.appendChild(th);
+    makeNewElement('th',this.name,tr);
     for (var i = 0; i < this.dailySales.length; i++) {
-      var td = document.createElement('td');
-      td.innerText = this.dailySales[i];
-      tr.appendChild(td);
+      makeNewElement('td',this.dailySales[i],tr);
+      // var td = document.createElement('td');
+      // td.innerText = this.dailySales[i];
+      // tr.appendChild(td);
     }
     // this.totalSalesPerLocation();
     locationCell.innerText = this.locationTotals;
@@ -72,14 +77,17 @@ var createStoreTable = function () {
   tHead.appendChild(tr);
 
   //create table th
-  var th = document.createElement('th');
-  th.innerText = '';
-  tr.appendChild(th);
+  makeNewElement('th','',tr);
+  // var th = document.createElement('th');
+  // th.innerText = '';
+  // tr.appendChild(th);
   for (var i = 0; i < hours.length; i++) {
+    // makeNewElement('th',hours[i],tr);
     var th = document.createElement('th');
     th.innerText = hours[i];
     tr.appendChild(th);
   }
+  // makeNewElement('th','Location Totals: ', tr);
   var th2 = document.createElement('th');
   th2.innerText = 'Location Totals: ';
   tr.appendChild(th2);
@@ -100,6 +108,7 @@ alki.renderSales();
 
 //array of locations
 var locationArray = [pike, airport, center,hill,alki];
+
 var createTotalRow = function () {
   var table = document.getElementById('store-data');
   var tr = document.createElement('tr');
@@ -136,8 +145,7 @@ var createCompleteTotal = function () {
 };
 //creates the total row
 // Start of Event Code
-
-var form = document.getElementById('getCookieSalesPerDay');
+var form = document.getElementById('getCookieSalesPerDayForm');
 function cookieSalesFormSubmitHandler(event) {
   event.preventDefault();
   // var name = event.target[name].value;
