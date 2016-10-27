@@ -13,7 +13,7 @@ var Store = function (name, minHourlyCustomers, maxHourlyCustomers,averageCookie
   this.dailySales = [];
   this.locationTotals = 0;
   this.locationLog = [];
-
+//
   //function that returns a random customer amount
   this.randomNumCustomer = function () {
     return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
@@ -87,20 +87,20 @@ var createStoreTable = function () {
 };
 
 createStoreTable();
-// //function calls
-// var pike = new Store('1st & Pike',23,65,6.3);
-// pike.renderSales();
-// var airport = new Store('SeaTac Airport', 3,24,1.2);
-// airport.renderSales();
-// var center = new Store('Seattle Center', 11,38,3.7);
-// center.renderSales();
-// var hill = new Store('Capitol Hill', 20,38,2.3);
-// hill.renderSales();
-// var alki = new Store('Alki', 2, 16, 4.6);
-// alki.renderSales();
-//
-// //array of locations
-// var locationArray = [pike, airport, center,hill,alki];
+//function calls
+var pike = new Store('1st & Pike',23,65,6.3);
+pike.renderSales();
+var airport = new Store('SeaTac Airport', 3,24,1.2);
+airport.renderSales();
+var center = new Store('Seattle Center', 11,38,3.7);
+center.renderSales();
+var hill = new Store('Capitol Hill', 20,38,2.3);
+hill.renderSales();
+var alki = new Store('Alki', 2, 16, 4.6);
+alki.renderSales();
+
+//array of locations
+var locationArray = [pike, airport, center,hill,alki];
 var locationArray = [];
 var createTotalRow = function () {
   var table = document.getElementById('store-data');
