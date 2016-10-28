@@ -1,11 +1,12 @@
 body {
   background-color: #FFECE3;
   font-family: Georgia;
-  color:white;
+  /*color:white;*/
 }
 h1{
   font-family: 'Open Sans', sans-serif;
   font-size: 60px;
+  font-weight: 800;
   text-align: center;
   color:#4F68FF;
   margin:auto;
@@ -19,7 +20,8 @@ h2 {
   margin-top: -5px;
   padding-top:40px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 80px;
+  font-size: 50px;
+  font-weight: 200;
   text-align: center;
   color:#4F68FF;
 }
@@ -40,7 +42,7 @@ border: 0;
 height: 5px;
 margin-top: 100px;
 }
-#picture {
+#content {
   background-color: #FFECE3;
 }
 
@@ -50,18 +52,37 @@ height: 10%;
 float: right;
 margin-right: 40%;
 }
-#picture img {
+#content p img {
   width: 30%;
+  height: 30%;
+}
+#content img {
+  width: 160px;
+  height:160px;
   margin-top:50px;
+  margin-right:70px;
+}
+#content .box2 {
+  margin: 0 auto;
 }
 
 .box {
-  /*margin-bottom: 5px;*/
+  float:left;
   width:300px;
-  height:500px;
+  height:1000px;
   background-color: rgba(232, 127, 169, 0.9);
 }
+.box2 {
+  position: relative;
+  float:right;
+  margin-right:200px;
+  width:800px;
+  height:1000px;
+  /*background-color: ;*/
+}
+.box2 h2 {
 
+}
 #store-data {
   margin-top: 10%;
   margin-bottom: 10%;
@@ -97,10 +118,17 @@ tr:nth-child(even) {
 .box .line {
   margin-top: 10px;
 }
+div #secondL {
+  margin-top:215px;
+}
+div #thirdL {
+  margin-top:20px;
+}
 li {
   float:left;
   text-decoration: none;
   list-style: none;
+  color: white;
 }
 
 #fieldset {
@@ -109,10 +137,16 @@ li {
   border:thin dashed red;
 
 }
+#mh2 {
+  padding-bottom:5px;
+  font-weight: 200;
+  font-size: 40px;
+  text-align: center;
+}
  #submit {
    margin:auto;
  }
 
- #pictures{
+ #content{
    position: relative;
  }
