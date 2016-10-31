@@ -135,7 +135,24 @@ li {
   padding: 0.5em;
   text-align: center;
   border:thin dashed red;
+  width:60%;
+  margin: 0 auto;
+  background-color:#FFA2AF;
 
+}
+#submit {
+    background-color:#4F68FF;
+    color:white;
+}
+input {
+  width: 300px;
+  padding-right: 50px;
+  font-size: 10px;
+}
+legend {
+  font-family: Georgia;
+  color:#4F68FF;
+  font-size: 1.5em;
 }
 #mh2 {
   padding-bottom:5px;
@@ -143,9 +160,6 @@ li {
   font-size: 40px;
   text-align: center;
 }
- #submit {
-   margin:auto;
- }
 
  #content{
    position: relative;

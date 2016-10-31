@@ -7,17 +7,26 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
-
+    <header>
+      <nav id="site-nav">
+        <ul>
+          <a href="index.html"><li class="active">Home</li></a>
+          <a href="#"><li>About Us</li></a>
+          <a href="sales.html"><li>Store Info</li></a>
+          <a href="#"><li>Events</li></a>
+        </ul>
+      </nav>
+    </header>
   <main>
   <section id="submission-from">
       <form id="getCookieSalesPerDayForm" method="post">
         <fieldset id="fieldset"><legend>Add Store Form</legend>
-          <input id="name" type = "text" name = "name" placeholder="Enter Store Name">
-          <input id = "minHourlyCustomers" type = "number" name = "minHourlyCustomers" placeholder = "Enter Minimum Number of Hourly Customers">
-          <input id = "maxHourlyCustomers" type = "number" name = "maxHourlyCustomers" placeholder = "Enter Maximum Number of Hourly Customers">
-          <input id = "averageCookies" type = "number" name = "averageCookies" placeholder = "Enter Average Cookies Sales per Hour">
-        </fieldset>
-        <input id="submit" name="submit" type="submit" value = "Submit Form">
+        <p>Store Name: <input id="name" type = "text" name = "name" placeholder="Enter Store Name"></p>
+          <p>Min.Hourly Cust.<input id = "minHourlyCustomers" type = "number" name = "minHourlyCustomers" placeholder = "Min.Hourly Customers"></p>
+          <p>Max. Hourly Cust.<input id = "maxHourlyCustomers" type = "number" name = "maxHourlyCustomers" placeholder = "Max.Hourly Customers"></p>
+          <p>Avg. Cookies Sold<input id = "averageCookies" type = "number" name = "averageCookies" placeholder = "Average Cookies Sales per Hour"></p>
+       <input id="submit" name="submit" type="submit" value = "Submit Form">
+      </fieldset>
 
       </form>
 </section>
