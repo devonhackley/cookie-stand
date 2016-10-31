@@ -1,22 +1,30 @@
 body {
   background-color: #FFECE3;
   font-family: Georgia;
+  /*color:white;*/
 }
 h1{
   font-family: 'Open Sans', sans-serif;
   font-size: 60px;
+  font-weight: 800;
   text-align: center;
   color:#4F68FF;
   margin:auto;
 }
+span {
+  color: rgba(100, 0, 200, 0.5);
+  text-decoration: underline;
+}
 
 h2 {
+  margin-top: -5px;
+  padding-top:40px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
+  font-size: 50px;
+  font-weight: 200;
   text-align: center;
   color:#4F68FF;
 }
-
 
 header {
     background-color: #E87FA9;
@@ -31,16 +39,49 @@ header a {
 .line {
 background-color: #ccc;
 border: 0;
-height: 4px;
-margin-bottom: 1.625em;
-margin-top: 1.6em;
+height: 5px;
+margin-top: 100px;
+}
+#content {
+  background-color: #FFECE3;
 }
 
 img {
-  width:50%;
-  height:40%;
+width: 20%;
+height: 10%;
+float: right;
+margin-right: 40%;
+}
+#content p img {
+  width: 30%;
+  height: 30%;
+}
+#content img {
+  width: 160px;
+  height:160px;
+  margin-top:50px;
+  margin-right:70px;
+}
+#content .box2 {
+  margin: 0 auto;
+}
+
+.box {
+  float:left;
+  width:300px;
+  height:1000px;
+  background-color: rgba(232, 127, 169, 0.9);
+}
+.box2 {
+  position: relative;
   float:right;
-  margin:auto;
+  margin-right:200px;
+  width:800px;
+  height:1000px;
+  /*background-color: ;*/
+}
+.box2 h2 {
+
 }
 #store-data {
   margin-top: 10%;
@@ -59,7 +100,7 @@ tr:nth-child(even) {
 #banner {
   position: relative;
   overflow: hidden;
-  height: 500px;
+  height: 190px;
 }
 #site-nav {
 
@@ -71,6 +112,24 @@ tr:nth-child(even) {
   text-decoration: none;
   list-style: none;
 }
+#site-nav  li:hover {
+  color: rgba(30, 5, 70, 0.5);
+}
+.box .line {
+  margin-top: 10px;
+}
+div #secondL {
+  margin-top:215px;
+}
+div #thirdL {
+  margin-top:20px;
+}
+li {
+  float:left;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
 
 #fieldset {
   padding: 0.5em;
@@ -78,6 +137,16 @@ tr:nth-child(even) {
   border:thin dashed red;
 
 }
+#mh2 {
+  padding-bottom:5px;
+  font-weight: 200;
+  font-size: 40px;
+  text-align: center;
+}
  #submit {
    margin:auto;
+ }
+
+ #content{
+   position: relative;
  }
