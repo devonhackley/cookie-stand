@@ -75,10 +75,11 @@ margin-right: 40%;
 .box2 {
   position: relative;
   float:right;
-  margin-right:200px;
-  width:800px;
-  height:1000px;
-  /*background-color: ;*/
+  margin-left:70%;
+  margin-top: 50%;
+  width:65%;
+  height:600px;
+  background-color: rgba(232, 127, 169, 0.9);
 }
 .box2 h2 {
 
@@ -96,6 +97,9 @@ margin-right: 40%;
 }
 tr:nth-child(even) {
   background-color: #E89499;
+}
+img#last-pic {
+  margin-top: -12%;
 }
 #banner {
   position: relative;
