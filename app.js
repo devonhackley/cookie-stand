@@ -3,7 +3,7 @@
 var hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
 var pike = {
-  name:'1st & Pike',
+  name: '1st & Pike',
   minHourlyCustomers:23,
   maxHourlyCustomers:65,
   averageCookies:6.3,
@@ -51,7 +51,7 @@ var pike = {
 };
 
 var airport = {
-  name:'seatac-airport',
+  name: 'seatac-airport',
   minHourlyCustomers:3,
   maxHourlyCustomers:24,
   averageCookies:1.2,
@@ -98,7 +98,7 @@ var airport = {
 };
 
 var hill = function () {
-  name:'Capitol Hill',
+  name: 'Capitol Hill',
   minHourlyCustomers:23,
   maxHourlyCustomers:65,
   averageCookies:6.3,
@@ -144,12 +144,6 @@ var hill = function () {
     main.appendChild(ul);
 
 }
-
-//adding elements to html using javascript
-// var h1 = document.createElement('h1'); //create
-// h1.innerText = 'All Cookie Stores'; //add data
-// var main = document.getElementByTagName('main')[0]; //attach to new element
-// main.appendChild(h1);
 
 
 //function calls
